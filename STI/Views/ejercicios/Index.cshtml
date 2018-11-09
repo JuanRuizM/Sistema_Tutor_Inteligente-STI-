@@ -1,0 +1,47 @@
+﻿@model IEnumerable<STI.Models.ejercicios>
+
+@{
+    ViewData["Title"] = "Ejercicios";
+}
+
+<h2>Ejercicios</h2>
+
+<p>
+    <a asp-action="Create">Crear Nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre_ejercicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.puntaje)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.id_temas)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre_ejercicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.puntaje)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_temas)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id_ejercicio">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.id_ejercicio">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.id_ejercicio">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

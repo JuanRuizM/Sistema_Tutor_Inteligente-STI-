@@ -1,0 +1,42 @@
+﻿@model STI.Models.resultados_ejercicios
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>resultados_ejercicios</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.acierto)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.acierto)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.id_ejercicio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.id_ejercicio)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.id_usuario)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.id_usuario)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.fecha)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id_resultado_ejercicio">Editar</a> |
+    <a asp-action="Index">Ir a la lista</a>
+</div>
